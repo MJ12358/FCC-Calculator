@@ -1,0 +1,84 @@
+body {
+  background: linear-gradient(to top left, #fff 15%, #343434);
+  background: -moz-linear-gradient(to top left, #fff 15%, #343434);
+  background: -webkit-linear-gradient(to top left, #fff 15%, #343434);
+  color: #fff;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+html {
+  height: 100%;
+}
+header {
+  margin: 5px auto;
+  text-align: center;
+}
+#calculator {
+  display: grid;
+  margin: 20px auto;
+  height: 60%;
+  width: 50%;
+  min-width: 350px;
+  min-height: 500px;
+  max-width: 400px;
+  background-color: #000;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  box-shadow: -12px -8px 5px #343434;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(75px, auto);
+  grid-template-areas:
+    "display display display display"
+}
+#display {
+  grid-area: display;
+  display: inline-block;
+  font-size: 44px;
+  text-align: right;
+  vertical-align: bottom;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#CE {
+  background-color: red;
+}
+#BK {
+  background-color: grey;
+}
+#equal {
+  background-color: blue;
+}
+.buttons {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 44px;
+  border: 1px solid #fff;
+  transition: all .2s linear;
+}
+.buttons:hover {
+  border: 2px solid #fff;
+  color: lightgrey;
+}
+/* Would love to do some cool fading on buttons like android calculator */
+.fade {
+  opacity: 1;
+  animation: fadeinout 1s linear fowards;
+}
+@-moz-keyframes fadeinout {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes fadeinout {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
